@@ -1,0 +1,101 @@
+:root {
+  /* Shopify 品牌色系：Emerald 主色 + Lime 强调 + 墨绿底色 */
+  --brand-emerald: #008060;
+  --brand-emerald-bright: #00a47c;
+  --brand-lime: #c6f24e;
+  --brand-lime-deep: #95bf47;
+  --brand-amber: #ffc96b;
+  --brand-coral: #ff7a5c;
+
+  /* 深色底（墨绿而非纯黑，Shopify 的深色层次） */
+  --bg-deep: #0a1411;
+  --bg-base: #0d1a16;
+  --bg-raised: #12241e;
+  --bg-card: #142b23;
+  --bg-inset: #0a1a15;
+
+  /* 浅色主题 */
+  --light-bg: #f6f6f1;
+  --light-card: #ffffff;
+  --light-line: #e3e3da;
+  --light-ink: #14201b;
+
+  --ink: #f2f7f4;
+  --ink-soft: #a9bfb6;
+  --ink-dim: #77938a;
+  --line: rgba(255, 255, 255, 0.09);
+  --line-strong: rgba(255, 255, 255, 0.16);
+
+  /* 错误态（沿用 coral 家族，不另起一套红） */
+  --danger: #ff7a5c;
+  --danger-soft: rgba(255, 122, 92, 0.13);
+  --danger-line: rgba(255, 122, 92, 0.4);
+  --danger-ink: #ffb9a8;
+
+  --radius-sm: 10px;
+  --radius-md: 16px;
+  --radius-lg: 22px;
+  --radius-xl: 28px;
+  --radius-pill: 999px;
+
+  --font-sans: "Inter", "Shopify Sans", -apple-system, BlinkMacSystemFont, "Segoe UI",
+    "PingFang SC", "Microsoft YaHei", sans-serif;
+  --font-mono: "JetBrains Mono", "SFMono-Regular", ui-monospace, "Cascadia Code", monospace;
+
+  --shadow-lift: 0 18px 40px -22px rgba(0, 0, 0, 0.85);
+  --shadow-glow: 0 0 0 1px rgba(198, 242, 78, 0.22), 0 14px 40px -20px rgba(198, 242, 78, 0.35);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  font-family: var(--font-sans);
+  background: var(--bg-deep);
+  color: var(--ink);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+/* 浅色主题：整体反相（保留品牌绿） */
+body[data-theme="light"] {
+  --bg-deep: #eceae2;
+  --bg-base: var(--light-bg);
+  --bg-raised: #ffffff;
+  --bg-card: var(--light-card);
+  --bg-inset: #f0efe7;
+  --ink: var(--light-ink);
+  --ink-soft: #4d5f57;
+  --ink-dim: #7b8c84;
+  --line: rgba(20, 32, 27, 0.1);
+  --line-strong: rgba(20, 32, 27, 0.2);
+  --danger: #b3371e;
+  --danger-soft: rgba(179, 55, 30, 0.08);
+  --danger-line: rgba(179, 55, 30, 0.28);
+  --danger-ink: #8f2a16;
+  --shadow-lift: 0 18px 40px -26px rgba(20, 32, 27, 0.35);
+}
+
+::selection {
+  background: var(--brand-lime);
+  color: #0a1411;
+}
+
+button {
+  font: inherit;
+  color: inherit;
+  cursor: pointer;
+}
+
+textarea {
+  font: inherit;
+  color: inherit;
+}

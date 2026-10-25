@@ -1,0 +1,212 @@
+{
+  "memories\u001fdemo\u001fepisodic": {
+    "ep_s-final": {
+      "id": "ep_s-final",
+      "type": "episodic",
+      "content": "Q: 以后都用中文、表格输出 | A: ## 演示模式回复\n\n这是脚本化模型的固定回答，用来验证 **前端 ↔ SSE ↔ 基座** 的接线，不是真实模型输出。\n\n### 这一轮实际发生了什么\n\n1. `POST /api/chat` 返回 `text/event-stream`\n2. `EventBridge` 把 `on_chat_model_stream` 翻成 `delta`，逐块推给前端\n3. 中间件栈顺序执行：阶段推进 → 上下文注入 → WARM 记忆 → 技能目录 → 记忆抽取 → 情节归档 → 工具结果截断\n4. 结束后 `after_agent` 把本轮偏好写进记忆后端\n\n### 想验证记忆？\n\n换成：**以后都用中文、表格输出** —— 再刷新右侧记忆面板，会看到 `output_format` / `language` 两条。",
+      "summary": "Q: 以后都用中文、表格输出 | A: ## 演示模式回复\n\n这是脚本化模型的固定回答，用来验证 **前端 ↔ SSE ↔ 基座** 的接线，不是真实模型输出。\n\n### 这一轮实际发生了什么\n\n1. `POST /api/chat` 返回 `text/event-stream`\n2. `EventBridge` 把 `on_chat_model_stream` 翻成 `delta`，逐块推给前端\n3. 中间件栈顺序执行：阶段推进 → 上下文注入 → WARM 记忆 → 技能目录 → 记忆抽取 → 情节归档 → 工具结果截断\n4. 结束后 `after_agent` 把本轮偏好写进记忆后端\n\n### 想验证记忆？\n\n换成：**以后都用中文、表格输出** —— 再刷新右侧记忆面板，会看到 `output_format` / `language` 两条。",
+      "key": "",
+      "tags": [],
+      "entities": [],
+      "source": {
+        "thread_id": "s-final"
+      },
+      "confidence": 0.9,
+      "evidence": "",
+      "valid_from": "2026-10-25T16:59:31.642926",
+      "invalidated_at": null,
+      "supersedes": null,
+      "created_at": "2026-10-25T16:59:31.642926",
+      "updated_at": "2026-10-25T16:59:37.783256",
+      "last_accessed_at": "2026-10-25T16:59:31.642926",
+      "access_count": 0,
+      "ttl_days": 90
+    }
+  },
+  "memories\u001fdemo\u001fsemantic": {
+    "mem_afd7af9a7087": {
+      "id": "mem_afd7af9a7087",
+      "type": "semantic",
+      "content": "table",
+      "summary": "output_format=table",
+      "key": "output_format",
+      "tags": [],
+      "entities": [],
+      "source": {
+        "thread_id": "s-final"
+      },
+      "confidence": 0.8,
+      "evidence": "",
+      "valid_from": "2026-10-25T16:59:31.646234",
+      "invalidated_at": "2026-10-25T16:59:37.787181",
+      "supersedes": "mem_967b82fa9a9d",
+      "created_at": "2026-10-25T16:59:31.646234",
+      "updated_at": "2026-10-25T16:59:37.787183",
+      "last_accessed_at": "2026-10-25T16:59:31.646234",
+      "access_count": 0,
+      "ttl_days": null
+    },
+    "mem_4afb9dcc0070": {
+      "id": "mem_4afb9dcc0070",
+      "type": "semantic",
+      "content": "zh",
+      "summary": "language=zh",
+      "key": "language",
+      "tags": [],
+      "entities": [],
+      "source": {
+        "thread_id": "s-final"
+      },
+      "confidence": 0.8,
+      "evidence": "",
+      "valid_from": "2026-10-25T16:59:31.649647",
+      "invalidated_at": null,
+      "supersedes": null,
+      "created_at": "2026-10-25T16:59:31.649647",
+      "updated_at": "2026-10-25T16:59:31.649675",
+      "last_accessed_at": "2026-10-25T16:59:31.649647",
+      "access_count": 0,
+      "ttl_days": null
+    },
+    "mem_967b82fa9a9d": {
+      "id": "mem_967b82fa9a9d",
+      "type": "semantic",
+      "content": "markdown",
+      "summary": "output_format=markdown",
+      "key": "output_format",
+      "tags": [],
+      "entities": [],
+      "source": {
+        "thread_id": "s-final"
+      },
+      "confidence": 0.8,
+      "evidence": "",
+      "valid_from": "2026-10-25T16:59:37.787166",
+      "invalidated_at": null,
+      "supersedes": null,
+      "created_at": "2026-10-25T16:59:37.787166",
+      "updated_at": "2026-10-25T16:59:37.788945",
+      "last_accessed_at": "2026-10-25T16:59:37.787166",
+      "access_count": 0,
+      "ttl_days": null
+    }
+  },
+  "user-preferences\u001fdemo": {
+    "preferences": {
+      "language": "zh",
+      "output_format": "markdown"
+    }
+  },
+  "memories\u001fdefault_user\u001fepisodic": {
+    "ep_demo-session": {
+      "id": "ep_demo-session",
+      "type": "episodic",
+      "content": "Q: 你好 | A: 你好！有什么我可以帮你？",
+      "summary": "Q: 最近一周ai领域信息 | A: # 最近一周 AI 领域动态\n\n**时间范围：2026 年 10 月 18—25 日（UTC+08:00）**  \n10 月 25 日尚未结束；以下仅列入检索时已发布、且能核对来源的动态。\n\n- **10 月 22 日｜Anthropic 将 Agent Skills 捐赠给 Agentic AI Foundation**  \n  Anthropic 宣布把 Agent Skills 标准及相关项目资源捐赠给 Agentic AI Foundation，交由中立社区组织维护。公司称，已有 70 多个智能体平台集成该标准。此举有助于推动 Agent 技能格式走向跨平台协作。  \n  [Anthropic 官方公告](https://www.anthropic.com/news/donating-agent-skills-to-the-agentic-ai",
+      "key": "",
+      "tags": [],
+      "entities": [],
+      "source": {
+        "thread_id": "demo-session"
+      },
+      "confidence": 0.9,
+      "evidence": "",
+      "valid_from": "2026-10-25T17:16:06.206954",
+      "invalidated_at": null,
+      "supersedes": null,
+      "created_at": "2026-10-25T17:16:06.206954",
+      "updated_at": "2026-10-25T18:03:30.060120",
+      "last_accessed_at": "2026-10-25T17:16:06.206954",
+      "access_count": 0,
+      "ttl_days": 90
+    },
+    "ep_s-news-2": {
+      "id": "ep_s-news-2",
+      "type": "episodic",
+      "content": "Q: 帮我查一下 2026 年 10 月 18 日到 25 日有哪些 AI 领域的重要动态 | A: 截至 **2026 年 2 月 6 日**，你指定的 **2026 年 10 月 18 日至 25 日**还在未来，因此目前无法核实这段时间有哪些 AI 动态，也没有可引用的来源。我不拿其他日期的新闻替代。\n\n你可以在 **2026 年 10 月 25 日之后**再让我查，我会按模型与产品发布、研究进展、行业和政策等方向整理，并附上来源与日期。",
+      "summary": "Q: 帮我查一下 2026 年 10 月 18 日到 25 日有哪些 AI 领域的重要动态 | A: 截至 **2026 年 2 月 6 日**，你指定的 **2026 年 10 月 18 日至 25 日**还在未来，因此目前无法核实这段时间有哪些 AI 动态，也没有可引用的来源。我不拿其他日期的新闻替代。\n\n你可以在 **2026 年 10 月 25 日之后**再让我查，我会按模型与产品发布、研究进展、行业和政策等方向整理，并附上来源与日期。",
+      "key": "",
+      "tags": [],
+      "entities": [],
+      "source": {
+        "thread_id": "s-news-2"
+      },
+      "confidence": 0.9,
+      "evidence": "",
+      "valid_from": "2026-10-25T17:29:15.261913",
+      "invalidated_at": null,
+      "supersedes": null,
+      "created_at": "2026-10-25T17:29:15.261913",
+      "updated_at": "2026-10-25T17:29:15.261922",
+      "last_accessed_at": "2026-10-25T17:29:15.261913",
+      "access_count": 0,
+      "ttl_days": 90
+    },
+    "ep_s-news-3": {
+      "id": "ep_s-news-3",
+      "type": "episodic",
+      "content": "Q: 帮我查一下 2026 年 10 月 18 日到 25 日有哪些 AI 领域的重要动态 | A: 你的目标是整理 **2026 年 10 月 18 日至 25 日**的 AI 领域重要动态，并用可核实的来源支撑结论。\n\n已知约束：当前日期为 **2026 年 10 月 25 日**，因此 25 日当天尚未结束；我会把检索截止时间限定为当前时点，不把之后发生的事纳入，也不会用其他日期的新闻替代。你没有指定关注领域或输出格式，我先按综合 AI 资讯整理，覆盖模型与产品发布、研究进展、产业和政策动态，并标注事件日期及来源。\n\n计划：\n1. 查阅 AI 资讯整理规范，明确来源核验、日期判断和去重方式。\n2. 检索这段时间的动态，并交叉核对重要事件与原始来源。\n3. 按主题归纳，说明为何重要；对无法核实的内容不作断言。\n\n现在开始检索。",
+      "summary": "Q: 帮我查一下 2026 年 10 月 18 日到 25 日有哪些 AI 领域的重要动态 | A: 你的目标是整理 **2026 年 10 月 18 日至 25 日**的 AI 领域重要动态，并用可核实的来源支撑结论。\n\n已知约束：当前日期为 **2026 年 10 月 25 日**，因此 25 日当天尚未结束；我会把检索截止时间限定为当前时点，不把之后发生的事纳入，也不会用其他日期的新闻替代。你没有指定关注领域或输出格式，我先按综合 AI 资讯整理，覆盖模型与产品发布、研究进展、产业和政策动态，并标注事件日期及来源。\n\n计划：\n1. 查阅 AI 资讯整理规范，明确来源核验、日期判断和去重方式。\n2. 检索这段时间的动态，并交叉核对重要事件与原始来源。\n3. 按主题归纳，说明为何重要；对无法核实的内容不作断言。\n\n现在开始检索。",
+      "key": "",
+      "tags": [],
+      "entities": [],
+      "source": {
+        "thread_id": "s-news-3"
+      },
+      "confidence": 0.9,
+      "evidence": "",
+      "valid_from": "2026-10-25T17:30:58.356250",
+      "invalidated_at": null,
+      "supersedes": null,
+      "created_at": "2026-10-25T17:30:58.356250",
+      "updated_at": "2026-10-25T17:30:58.356274",
+      "last_accessed_at": "2026-10-25T17:30:58.356250",
+      "access_count": 0,
+      "ttl_days": 90
+    },
+    "ep_s-news-4": {
+      "id": "ep_s-news-4",
+      "type": "episodic",
+      "content": "Q: 请检索并整理 2026 年 10 月 18 日至 25 日 AI 领域的重要动态，要带来源和日期 | A: # AI 领域重要动态（2026 年 10 月 18—25 日）\n\n**检索截止：2026 年 10 月 25 日当前时点。**10 月 25 日尚未结束，以下只收录截至检索时已公开、且能核实发布日期和来源的动态。按影响面筛选后，本次确认到两项 Anthropic 官方公告；没有足够可靠的一手来源支撑其他线索，因此不把它们列为已确认事件。\n\n| 日期 | 动态 | 重点 | 来源 |\n|---|---|---|---|\n| **10 月 22 日** | Anthropic 将 **Agent Skills** 捐赠给 Agentic AI Foundation（AAIF） | Anthropic 表示，Agent Skills 是用于为 AI 智能体提供特定知识与工作流的开放",
+      "summary": "Q: 请检索并整理 2026 年 10 月 18 日至 25 日 AI 领域的重要动态，要带来源和日期 | A: # AI 领域重要动态（2026 年 10 月 18—25 日）\n\n**检索截止：2026 年 10 月 25 日当前时点。**10 月 25 日尚未结束，以下只收录截至检索时已公开、且能核实发布日期和来源的动态。按影响面筛选后，本次确认到两项 Anthropic 官方公告；没有足够可靠的一手来源支撑其他线索，因此不把它们列为已确认事件。\n\n| 日期 | 动态 | 重点 | 来源 |\n|---|---|---|---|\n| **10 月 22 日** | Anthropic 将 **Agent Skills** 捐赠给 Agentic AI Foundation（AAIF） | Anthropic 表示，Agent Skills 是用于为 AI 智能体提供特定知识与工作流的开放",
+      "key": "",
+      "tags": [],
+      "entities": [],
+      "source": {
+        "thread_id": "s-news-4"
+      },
+      "confidence": 0.9,
+      "evidence": "",
+      "valid_from": "2026-10-25T17:33:30.844336",
+      "invalidated_at": null,
+      "supersedes": null,
+      "created_at": "2026-10-25T17:33:30.844336",
+      "updated_at": "2026-10-25T17:33:30.844344",
+      "last_accessed_at": "2026-10-25T17:33:30.844336",
+      "access_count": 0,
+      "ttl_days": 90
+    },
+    "ep_s-feeds-1": {
+      "id": "ep_s-feeds-1",
+      "type": "episodic",
+      "content": "Q: 按标准流程整理一下最近一周的 AI 动态 | A: # 最近一周 AI 动态\n**时间范围：2026 年 10 月 18 日至 25 日检索时点（UTC+08:00）**  \n10 月 25 日尚未结束；以下只列入检索时已发布、且有来源可核对的动态。按影响面整理：\n\n- **10 月 22 日｜Anthropic 将 Agent Skills 捐赠给 Agentic AI Foundation。**此举推动 agent 工作流规范转由基金会治理。Anthropic 提到的平台集成等采用数据属于公司自述，尚未独立核实。  \n  来源：[Anthropic 公告](https://www.anthropic.com/news/donating-agent-skills-to-the-agentic-ai-foundation)\n\n- **10 月 22 日｜Uber 将向超过 3 万名员",
+      "summary": "Q: 按标准流程整理一下最近一周的 AI 动态 | A: # 最近一周 AI 动态\n**时间范围：2026 年 10 月 18 日至 25 日检索时点（UTC+08:00）**  \n10 月 25 日尚未结束；以下只列入检索时已发布、且有来源可核对的动态。按影响面整理：\n\n- **10 月 22 日｜Anthropic 将 Agent Skills 捐赠给 Agentic AI Foundation。**此举推动 agent 工作流规范转由基金会治理。Anthropic 提到的平台集成等采用数据属于公司自述，尚未独立核实。  \n  来源：[Anthropic 公告](https://www.anthropic.com/news/donating-agent-skills-to-the-agentic-ai-foundation)\n\n- **10 月 22 日｜Uber 将向超过 3 万名员",
+      "key": "",
+      "tags": [],
+      "entities": [],
+      "source": {
+        "thread_id": "s-feeds-1"
+      },
+      "confidence": 0.9,
+      "evidence": "",
+      "valid_from": "2026-10-25T17:44:51.576995",
+      "invalidated_at": null,
+      "supersedes": null,
+      "created_at": "2026-10-25T17:44:51.576995",
+      "updated_at": "2026-10-25T17:44:51.577005",
+      "last_accessed_at": "2026-10-25T17:44:51.576995",
+      "access_count": 0,
+      "ttl_days": 90
+    }
+  }
+}
